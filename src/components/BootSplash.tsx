@@ -32,7 +32,7 @@ const BootSplash: React.FC<BootSplashProps> = ({ onComplete }) => {
     if (showFinalScreen) {
       // Play enter sound
       try {
-        const enterSound = new Audio('/enter-sound.mp3');
+        const enterSound = new Audio('/boot-sound.mp3');
         enterSound.volume = 0.4;
         enterSound.play().catch(e => console.log('Enter sound failed:', e));
       } catch (error) {
@@ -125,7 +125,7 @@ const BootSplash: React.FC<BootSplashProps> = ({ onComplete }) => {
       
       // Play completion sound
       try {
-        const completeSound = new Audio('/boot-complete.mp3');
+        const completeSound = new Audio('/boot-sound.mp3');
         completeSound.volume = 0.4;
         completeSound.play().catch(e => console.log('Complete sound failed:', e));
       } catch (error) {

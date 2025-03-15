@@ -16,7 +16,7 @@ const UserLeaveNotification: React.FC<UserLeaveNotificationProps> = ({ username,
     const timer = setTimeout(() => {
       setVisible(false);
       setTimeout(onClose, 500); // Allow exit animation to complete
-    }, 3000);
+    }, 300);
     
     return () => clearTimeout(timer);
   }, [onClose]);
