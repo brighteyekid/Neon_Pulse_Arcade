@@ -1,0 +1,64 @@
+.user-leave-notification {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border: 2px solid #ff0055;
+  border-radius: 8px;
+  padding: 15px;
+  width: 300px;
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.3), 0 0 40px rgba(0, 0, 0, 0.2);
+  color: white;
+  z-index: 1000;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.user-leave-icon {
+  background-color: #ff0055;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.user-leave-content {
+  flex-grow: 1;
+}
+
+.user-leave-content h3 {
+  margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #ff0055;
+  font-family: 'Press Start 2P', monospace, sans-serif;
+}
+
+.user-leave-content p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #ffffff;
+  font-family: 'Press Start 2P', monospace, sans-serif;
+}
+
+.user-leave-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background-color: #00eeff;
+  box-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+}
+
+@media (max-width: 480px) {
+  .user-leave-notification {
+    width: calc(100% - 40px);
+    right: 20px;
+  }
+} 

@@ -1,0 +1,46 @@
+.message-reply-container {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 6px;
+  padding: 6px;
+  background-color: rgba(45, 45, 66, 0.5);
+  border-left: 3px solid #ffcc00;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.message-reply-container:hover {
+  background-color: rgba(45, 45, 66, 0.8);
+}
+
+.message-reply-indicator {
+  margin-right: 6px;
+  color: #ffcc00;
+  display: flex;
+  align-items: center;
+}
+
+.reply-icon {
+  font-size: 0.8rem;
+}
+
+.message-reply-content {
+  flex: 1;
+  overflow: hidden;
+}
+
+.message-reply-username {
+  font-size: 0.75rem;
+  font-weight: bold;
+  color: #aaaaaa;
+  margin-bottom: 2px;
+}
+
+.message-reply-text {
+  font-size: 0.8rem;
+  color: #cccccc;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} 

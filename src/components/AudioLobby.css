@@ -1,0 +1,577 @@
+.audio-lobby-container {
+  background-color: var(--color-bg-primary);
+  border: 2px solid var(--color-accent-blue);
+  border-radius: 4px;
+  width: 100%;
+  max-width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.3);
+}
+
+.audio-lobby-header {
+  background-color: var(--color-bg-secondary);
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--color-accent-blue);
+}
+
+.audio-lobby-title {
+  color: var(--color-accent-blue);
+  font-size: 1.2rem;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(0, 0, 255, 0.5);
+}
+
+.audio-lobby-list-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.audio-lobby-actions {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.create-lobby-form {
+  background-color: var(--color-bg-secondary);
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  border: 1px solid var(--color-accent-blue);
+}
+
+.create-lobby-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.audio-lobby-subtitle {
+  color: var(--color-accent-green);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  border-bottom: 1px solid var(--color-accent-green);
+  padding-bottom: 0.25rem;
+}
+
+.audio-lobby-list {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.audio-lobby-item {
+  background-color: var(--color-bg-secondary);
+  padding: 0.75rem;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid var(--color-border);
+}
+
+.audio-lobby-item:hover {
+  border-color: var(--color-accent-blue);
+  box-shadow: 0 0 5px rgba(0, 0, 255, 0.2);
+}
+
+.audio-lobby-item-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.audio-lobby-item-name {
+  font-weight: bold;
+  color: white;
+}
+
+.audio-lobby-item-users {
+  font-size: 0.7rem;
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.no-lobbies-message {
+  color: var(--color-text-secondary);
+  text-align: center;
+  padding: 2rem 0;
+  font-style: italic;
+}
+
+.active-lobby-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.active-lobby-controls {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+  background-color: var(--color-bg-secondary);
+  border-radius: 4px;
+}
+
+.active-lobby-subtitle {
+  color: var(--color-accent-green);
+  font-size: 0.9rem;
+  margin: 0.5rem 0;
+  border-bottom: 1px solid var(--color-accent-green);
+  padding-bottom: 0.25rem;
+}
+
+.lobby-users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.lobby-user-item {
+  background-color: var(--color-bg-secondary);
+  padding: 0.75rem;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--color-border);
+}
+
+.lobby-user-self {
+  border-color: var(--color-accent-green);
+  background-color: rgba(0, 255, 0, 0.1);
+}
+
+.lobby-user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background-color: var(--color-bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.speaking-indicator {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent-green);
+  animation: pulse 1.5s infinite;
+}
+
+.lobby-user-info {
+  flex: 1;
+}
+
+.lobby-user-name {
+  font-weight: bold;
+  color: white;
+}
+
+.lobby-user-status {
+  display: flex;
+  align-items: center;
+}
+
+.muted-icon {
+  color: var(--color-accent-red);
+}
+
+.retro-button-muted {
+  background-color: var(--color-accent-red);
+  color: white;
+}
+
+.retro-button-leave {
+  background-color: var(--color-accent-red);
+  color: white;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.7;
+  }
+}
+
+.audio-lobby {
+  background-color: #1a1a2e;
+  border-radius: 12px;
+  color: #e6e6e6;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+.audio-lobby-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #2d2d42;
+}
+
+.audio-lobby-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.audio-lobby-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.mic-button, .leave-button {
+  background-color: #2d2d42;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6e6e6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.mic-button:hover, .leave-button:hover {
+  background-color: #3a3a5a;
+}
+
+.mic-button.muted {
+  background-color: #e63946;
+}
+
+.mic-button.muted:hover {
+  background-color: #ff4d5e;
+}
+
+.leave-button {
+  background-color: #e63946;
+}
+
+.leave-button:hover {
+  background-color: #ff4d5e;
+}
+
+.error-message {
+  background-color: rgba(230, 57, 70, 0.2);
+  border-left: 4px solid #e63946;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.invite-section, .scan-section {
+  background-color: #2d2d42;
+  border-radius: 8px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.invite-section h3, .scan-section h3, .participants-container h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.invite-link-container {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.invite-link-input {
+  flex: 1;
+  background-color: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  border-radius: 4px 0 0 4px;
+  padding: 8px 12px;
+  color: #e6e6e6;
+  font-size: 0.9rem;
+}
+
+.copy-link-button {
+  background-color: #4361ee;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0 12px;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.copy-link-button:hover {
+  background-color: #3a56d4;
+}
+
+.copied-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.invite-instructions {
+  font-size: 0.85rem;
+  color: #b8b8d4;
+  margin: 0;
+}
+
+/* Scan section styles */
+.scan-controls {
+  margin-bottom: 12px;
+}
+
+.scan-button {
+  background-color: #4361ee;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.scan-button:hover:not(:disabled) {
+  background-color: #3a56d4;
+}
+
+.scan-button:disabled {
+  background-color: #3a3a5a;
+  cursor: not-allowed;
+}
+
+.scan-button.scanning {
+  background-color: #3a56d4;
+  position: relative;
+  overflow: hidden;
+}
+
+.scan-button.scanning::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: scanning 1.5s infinite;
+}
+
+@keyframes scanning {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.manual-connect {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.peer-id-input {
+  flex: 1;
+  background-color: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  border-radius: 4px 0 0 4px;
+  padding: 8px 12px;
+  color: #e6e6e6;
+  font-size: 0.9rem;
+}
+
+.connect-button {
+  background-color: #4361ee;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0 12px;
+  color: white;
+  cursor: pointer;
+}
+
+.connect-button:hover:not(:disabled) {
+  background-color: #3a56d4;
+}
+
+.connect-button:disabled {
+  background-color: #3a3a5a;
+  cursor: not-allowed;
+}
+
+.peer-id-display {
+  font-size: 0.85rem;
+  color: #b8b8d4;
+  margin: 0;
+  padding: 8px;
+  background-color: #1a1a2e;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.peer-id {
+  font-family: monospace;
+  font-weight: bold;
+  color: #e6e6e6;
+}
+
+.participants-container {
+  background-color: #2d2d42;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.participants-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.participant {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 6px;
+  background-color: #1a1a2e;
+  transition: all 0.3s ease;
+}
+
+.participant.speaking {
+  background-color: #2a2a45;
+  box-shadow: 0 0 0 2px #4361ee;
+}
+
+.participant-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #4361ee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.participant-info {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.participant-name {
+  font-weight: 500;
+}
+
+.participant-status {
+  color: #b8b8d4;
+}
+
+.debug-button {
+  background-color: #2d2d42;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6e6e6;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.debug-button:hover {
+  background-color: #3a3a5a;
+}
+
+.debug-panel {
+  background-color: #1a1a2e;
+  border: 1px solid #3a3a5a;
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+.debug-logs {
+  background-color: #0f0f1a;
+  border-radius: 4px;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 12px;
+  height: 200px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.debug-log {
+  margin-bottom: 4px;
+  word-break: break-all;
+}
+
+.debug-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.debug-actions button {
+  background-color: #2d2d42;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  color: #e6e6e6;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.debug-actions button:hover {
+  background-color: #3a3a5a;
+} 

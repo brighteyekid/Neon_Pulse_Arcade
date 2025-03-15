@@ -1,0 +1,226 @@
+.boot-splash {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  font-family: 'Press Start 2P', monospace, sans-serif;
+  cursor: pointer;
+}
+
+.boot-splash-content {
+  width: 90%;
+  max-width: 800px;
+}
+
+.boot-splash-terminal {
+  background-color: #000000;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 238, 255, 0.3);
+  margin-bottom: 30px;
+  border: 2px solid #00eeff;
+}
+
+.boot-splash-terminal-header {
+  background: linear-gradient(90deg, #00eeff 0%, #0077ff 100%);
+  padding: 10px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boot-splash-terminal-title {
+  color: #000000;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.boot-splash-terminal-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.boot-splash-terminal-control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  display: inline-block;
+}
+
+.boot-splash-terminal-control:nth-child(1) {
+  background-color: #ff5f56;
+}
+
+.boot-splash-terminal-control:nth-child(2) {
+  background-color: #ffbd2e;
+}
+
+.boot-splash-terminal-control:nth-child(3) {
+  background-color: #27c93f;
+}
+
+.boot-splash-terminal-body {
+  padding: 20px;
+  color: #00ff00;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.boot-splash-terminal-line {
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+.boot-splash-terminal-prompt {
+  color: #00eeff;
+  margin-right: 10px;
+}
+
+.boot-splash-terminal-cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background-color: #00ff00;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+.boot-splash-terminal-success {
+  color: #00eeff;
+  font-weight: bold;
+}
+
+.boot-splash-progress-container {
+  background-color: #0a0a14;
+  height: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid #00eeff;
+  box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+}
+
+.boot-splash-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, #ff0055 0%, #00eeff 100%);
+  transition: width 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.boot-splash-progress-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: progress-shine 1.5s infinite;
+}
+
+.boot-splash-progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 0.8rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.8);
+}
+
+.boot-splash-title-container {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  border: 2px solid #ff0055;
+  box-shadow: 0 0 30px rgba(255, 0, 85, 0.3), inset 0 0 20px rgba(0, 238, 255, 0.2);
+}
+
+.boot-splash-title {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 0 10px #ff0055, 0 0 20px #ff0055, 0 0 30px #ff0055;
+  letter-spacing: 2px;
+}
+
+.boot-splash-tagline {
+  font-size: 1rem;
+  color: #00eeff;
+  margin-bottom: 40px;
+  text-shadow: 0 0 10px #00eeff;
+  letter-spacing: 1px;
+}
+
+.boot-splash-logo {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 15px;
+  border: 3px solid #ff0055;
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.5), inset 0 0 15px rgba(0, 238, 255, 0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boot-splash-logo-inner {
+  width: 100%;
+  height: 100%;
+  background-image: url('/arcade-logo.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 8px #00eeff);
+}
+
+.boot-splash-enter {
+  color: white;
+  font-size: 0.8rem;
+  margin-top: 30px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes progress-shine {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+@media (max-width: 768px) {
+  .boot-splash-title {
+    font-size: 1.8rem;
+  }
+  
+  .boot-splash-tagline {
+    font-size: 0.7rem;
+  }
+  
+  .boot-splash-terminal-body {
+    font-size: 0.7rem;
+    max-height: 200px;
+  }
+} 
